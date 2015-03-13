@@ -31,13 +31,31 @@ describe "Tic Tac Toe, in arrays" do
   end
 
   describe "getting coordinates of usage" do
-    xit "returns an array of [row, column] array coordinates for each usage of X" do
-      x_coordinates = ___
+    it "returns an array of [row, column] array coordinates for each usage of X" do
+      result = []
+
+      data.each_with_index do |row, row_index|
+        row.each_with_index do |val, val_index|
+          if val == "X"
+            result << [row_index, val_index]
+          end
+        end
+      end
+      x_coordinates = result
       expect(x_coordinates).to be == [[0, 0], [1, 0], [1, 1], [2, 1]]
     end
 
-    xit "returns an array of [row, column] array coordinates for each usage of O" do
-      o_coordinates = ___
+    it "returns an array of [row, column] array coordinates for each usage of O" do
+      result = []
+
+      data.each_with_index do |row, row_index|
+        row.each_with_index do |val, val_index|
+          if val == "O"
+            result << [row_index, val_index]
+          end
+        end
+      end
+      o_coordinates = result
       expect(o_coordinates).to be == [[0, 1], [0, 2], [1, 2], [2, 0], [2, 2]]
     end
   end
